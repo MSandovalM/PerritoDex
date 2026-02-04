@@ -44,6 +44,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.activity.ktx)
 
+    // Retrofit y Moshi
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
