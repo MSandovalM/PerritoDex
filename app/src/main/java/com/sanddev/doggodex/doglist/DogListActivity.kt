@@ -1,5 +1,6 @@
 package com.sanddev.doggodex.doglist
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -7,9 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sanddev.doggodex.Dog
 import com.sanddev.doggodex.R
 import com.sanddev.doggodex.databinding.ActivityDogListBinding
+import com.sanddev.doggodex.dogdetail.DogDetailActivity
+import com.sanddev.doggodex.dogdetail.DogDetailActivity.Companion.DOG_KEY
 
 class DogListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDogListBinding
@@ -35,6 +37,13 @@ class DogListActivity : AppCompatActivity() {
 
         dogListViewModel.dogList.observe(this) { dogList ->
             adapter.submitList(dogList)
+        }
+
+        adapter.setOnItemClickListener { dog ->
+            // Pasar el dog a DogDetailActivity
+            val intent = Intent(this, DogDetailActivity::class.java)
+            intent.putExtra(DOG_KEY, dog)
+            startActivity(intent)
         }
 
     }
