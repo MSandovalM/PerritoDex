@@ -9,13 +9,14 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.sanddev.doggodex.R
 import com.sanddev.doggodex.api.ApiResponseStatus
 import com.sanddev.doggodex.databinding.ActivityDogListBinding
 import com.sanddev.doggodex.dogdetail.DogDetailActivity
 import com.sanddev.doggodex.dogdetail.DogDetailActivity.Companion.DOG_KEY
 
+private const val GRID_SPAN_COUNT = 3
 class DogListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDogListBinding
     private val dogListViewModel: DogListViewModel by viewModels() // asi se instancia un viewmodel
@@ -35,7 +36,7 @@ class DogListActivity : AppCompatActivity() {
         val progressBar = binding.loadingWheel
 
         val recycler = binding.dogRecycler
-        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.layoutManager = GridLayoutManager(this, GRID_SPAN_COUNT)
 
         val adapter = DogAdapter()
         recycler.adapter = adapter
