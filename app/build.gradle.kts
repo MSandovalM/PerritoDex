@@ -1,8 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    kotlin("kapt")
     id("kotlin-parcelize")
+    id("androidx.navigation.safeargs")
+    kotlin("kapt")
 }
 
 android {
@@ -52,6 +53,10 @@ dependencies {
     // Coil - Images
     implementation("io.coil-kt.coil3:coil-compose:3.3.0")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.3.0")
+
+    // Fragment Navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:2.9.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.9.7")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

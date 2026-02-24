@@ -10,4 +10,14 @@
     <string name="dog_life_expectancy_format">%s years</string>
     <string name="error_not_network">Error device not connected to network</string>
     <string name="error_unknown">Unknown Error</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="do_not_have_an_account">Do not have an account?</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email_is_not_valid">Email is not valid</string>
+    <string name="password_must_not_empty">Password must not be empty</string>
+    <string name="passwords_must_match">Password must match</string>
 </resources>
