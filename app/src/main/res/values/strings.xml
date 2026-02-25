@@ -20,4 +20,13 @@
     <string name="email_is_not_valid">Email is not valid</string>
     <string name="password_must_not_empty">Password must not be empty</string>
     <string name="passwords_must_match">Password must match</string>
+    <string name="error_sign_up">Error on sign up</string>
+    <string name="error_sign_in">Error on sign up</string>
+    <string name="user_already_exists">Error User already exists</string>
+    <string name="there_was_an_error">There was an error signing in</string>
+    <string name="error_wrong_user_password">Error Wrong User or Password</string>
+    <string name="settings_fab">Settings FAB</string>
+    <string name="take_photo_fab">Take a new photo FAB</string>
+    <string name="dog_list_fab">Dog List FAB</string>
+    <string name="logout">Close Session</string>
 </resources>

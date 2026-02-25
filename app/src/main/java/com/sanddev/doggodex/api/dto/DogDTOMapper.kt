@@ -1,6 +1,6 @@
 package com.sanddev.doggodex.api.dto
 
-import com.sanddev.doggodex.Dog
+import com.sanddev.doggodex.models.Dog
 
 class DogDTOMapper {
 

@@ -2,13 +2,10 @@ package com.sanddev.doggodex.dogdetail
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.BundleCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import coil3.load
-import com.sanddev.doggodex.Dog
+import com.sanddev.doggodex.models.Dog
 import com.sanddev.doggodex.R
 import com.sanddev.doggodex.databinding.ActivityDogDetailBinding
 

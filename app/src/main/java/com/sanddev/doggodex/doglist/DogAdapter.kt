@@ -2,12 +2,11 @@ package com.sanddev.doggodex.doglist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil3.load
-import com.sanddev.doggodex.Dog
+import com.sanddev.doggodex.models.Dog
 import com.sanddev.doggodex.databinding.DogListItemBinding
 
 class DogAdapter : ListAdapter<Dog, DogAdapter.DogViewHolder>(DiffCallback) {

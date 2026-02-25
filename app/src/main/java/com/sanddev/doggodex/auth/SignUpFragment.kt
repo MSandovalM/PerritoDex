@@ -9,12 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.sanddev.doggodex.R
 import com.sanddev.doggodex.databinding.FragmentSignUpBinding
+import com.sanddev.doggodex.validEmail
 
 class SignUpFragment : Fragment() {
     
     private lateinit var binding: FragmentSignUpBinding
     interface SignUpFragmentActions {
-        fun onSignUpFieldsValidated(email: String?, password: String, confirmationPassword: String)
+        fun onSignUpFieldsValidated(email: String, password: String, confirmationPassword: String)
     }
 
     private lateinit var signUpFragmentActions: SignUpFragmentActions
@@ -50,7 +51,7 @@ class SignUpFragment : Fragment() {
         binding.confirmPasswordInput.error = ""
 
         val email = binding.emailEdit.text.toString()
-        if (!isValidEmail(email)) {
+        if (!validEmail(email)) {
             binding.emailInput.error = getString(R.string.email_is_not_valid)
             return
         }
@@ -73,10 +74,6 @@ class SignUpFragment : Fragment() {
         }
 
         signUpFragmentActions.onSignUpFieldsValidated(email, password, passwordConfirmation)
-    }
-    
-    private fun isValidEmail(email: String?): Boolean {
-        return !email.isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
 }

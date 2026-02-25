@@ -1,4 +1,4 @@
-package com.sanddev.doggodex
+package com.sanddev.doggodex.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

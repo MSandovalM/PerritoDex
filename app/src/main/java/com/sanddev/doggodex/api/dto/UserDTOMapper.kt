@@ -1,6 +1,6 @@
 package com.sanddev.doggodex.api.dto
 
-import com.sanddev.doggodex.User
+import com.sanddev.doggodex.models.User
 
 class UserDTOMapper {
     fun fromUserDTOToUserDomain(userDTO: UserDTO): User {

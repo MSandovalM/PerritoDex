@@ -1,6 +1,6 @@
 package com.sanddev.doggodex.doglist
 
-import com.sanddev.doggodex.Dog
+import com.sanddev.doggodex.models.Dog
 import com.sanddev.doggodex.api.ApiResponseStatus
 import com.sanddev.doggodex.api.DogsApi.retrofitService
 import com.sanddev.doggodex.api.dto.DogDTOMapper

@@ -8,16 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.sanddev.doggodex.R
 import com.sanddev.doggodex.databinding.FragmentLoginBinding
-import kotlin.math.log
+import com.sanddev.doggodex.validEmail
 
 class LoginFragment : Fragment() {
 
     interface LoginFragmentActions {
         fun onRegisterButtonClick()
-
+        fun onLogInFieldsValidated(email: String, password: String)
     }
 
     private lateinit var loginFragmentActions: LoginFragmentActions
+    private lateinit var binding: FragmentLoginBinding
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -32,11 +33,33 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentLoginBinding.inflate(inflater)
+        binding = FragmentLoginBinding.inflate(inflater)
         binding.loginRegisterButton.setOnClickListener {
             loginFragmentActions.onRegisterButtonClick()
+        }
+        binding.loginButton.setOnClickListener {
+            validateFields()
         }
         return binding.root
     }
 
+    fun validateFields() {
+
+        binding.emailInput.error = ""
+        binding.passwordInput.error = ""
+
+        val email = binding.emailEdit.text.toString()
+        if (!validEmail(email)) {
+            binding.emailInput.error = getString(R.string.email_is_not_valid)
+            return
+        }
+
+        val password = binding.passwordEdit.text.toString()
+        if (password.isEmpty()) {
+            binding.passwordInput.error = getString(R.string.password_must_not_empty)
+            return
+        }
+
+        loginFragmentActions.onLogInFieldsValidated(email, password)
+    }
 }
